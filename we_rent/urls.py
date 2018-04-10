@@ -19,6 +19,6 @@ from management import views
 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
-	url(r'^management',include('management.urls')),
+	url(r'^management/',include('management.urls')),
     url('admin/', admin.site.urls),
 ]

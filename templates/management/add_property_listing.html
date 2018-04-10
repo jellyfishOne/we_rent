@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>We Rent</title>
+</head>
+
+<body>
+	<h1>Add a Property Listing</h1>
+	<div>
+		<form id="PropertyListingForm" method="post" action="/management/add_property_listing/">
+			{% csrf_token %}
+			{% for field in form.visible_fields %}
+				{{ field.errors }}
+				{{ field.help_text }}
+				{{ field }}
+			{% endfor %}
+			<input type="submit" name="submit" value="Create Property Listing"/>
+			
+		</form>
+			
+	</div>
+
+</body>
+</html>
