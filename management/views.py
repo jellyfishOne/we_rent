@@ -19,5 +19,5 @@ def add_property_listing(request):
 			# Save the new property listing to the database
 			form.save(commit=True)
 			return index(request)
-	return render(request, 'management/add_property_listing.html', {'forms': form})
+	return render(request, 'management/add_property_listing.html', {'form': form})
 

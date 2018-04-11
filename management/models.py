@@ -23,7 +23,7 @@ class PropertyListing(models.Model):
 	zip_code = models.CharField(max_length=12)
 	beds = models.IntegerField()
 	baths = models.FloatField()
-	available_date = models.DateField(auto_now=False, auto_now_add=False)
+	available_date = models.DateField(null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Property Listings'
