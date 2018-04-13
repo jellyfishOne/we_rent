@@ -1,6 +1,6 @@
 from django import forms
 import datetime
-from django.contrib.admin import widgets
+from django.forms import ModelForm
 from management.models import PropertyListing, State, Country
 
 class PropertyListingForm(forms.ModelForm):
@@ -10,7 +10,11 @@ class PropertyListingForm(forms.ModelForm):
 	zip_code = forms.CharField(max_length=12)
 	beds = forms.IntegerField()
 	baths = forms.FloatField()
-	available_date = forms.DateField(widget=widgets.AdminDateWidget)
+	
 	class Meta:
 		model = PropertyListing
 		fields = '__all__'
+		widgets = {
+			'available_date': forms.DateInput(attrs={'class': 'datepicker'})
+		}
+
