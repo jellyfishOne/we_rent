@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{% extends "management/index.html" %}
+{% block content %}
+<head>
+	<title>Property Listing</title>
+</head>
+<body>
+	<h3>Property Listing</h1>
+	
+	<p>
+		Address: {{ property_listing.address }}
+		{{ property_listing.city }} 
+		{{ property_listing.state }}
+		{{property_listing.zip_code}}</br>
+		
+		Beds: {{ property_listing.beds }}</br>
+		Baths: {{ property_listing.baths }}</br>
+		Available Date: {{ property_listing.available_date}}</br>
+	</p>
+	
+{% endblock content %}
+</body>
+</html>

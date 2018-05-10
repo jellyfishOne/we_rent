@@ -2,12 +2,13 @@ from django import forms
 import datetime
 from django.forms import ModelForm
 from management.models import PropertyListing, State, Country
+from localflavor.us.forms import USZipCodeField
 
 class PropertyListingForm(forms.ModelForm):
 	address = forms.CharField()
 	city = forms.CharField()
 	state = forms.ModelChoiceField(queryset=State.objects.all())
-	zip_code = forms.CharField(max_length=12)
+	zip_code = USZipCodeField()
 	beds = forms.IntegerField()
 	baths = forms.FloatField()
 	

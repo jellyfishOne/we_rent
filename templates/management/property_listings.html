@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+{% extends "management/index.html" %}
+{% block content %}
+<head>
+	<title>Property Listings</title>
+</head>
+<body>
+	<p>Property Listings</p>
+	<ul>
+		{% for property in property_listings %}
+		<li>
+			<a href="{% url 'property_listing' property.id %}">{{ property }}</a>
+		</li>
+		{% empty %}
+		<li>No property listings have been added.</li>
+		{% endfor %}
+	</ul>
+{% endblock content %}
+</body>
+
+</html>
